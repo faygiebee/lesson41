@@ -1,4 +1,5 @@
 import './SearchBar.css';
+import RecipeCard from './RecipeCard';
 function SearchBar(props){
 
 
@@ -13,6 +14,8 @@ function SearchBar(props){
           <h3>Recipes List</h3>
           <label for="search-box">Search:</label>
           <input onChange={ChangeHandler}type="text" id="search-box"/>
+          
+        <RecipeCard></RecipeCard>
         </div>
         
       </div>

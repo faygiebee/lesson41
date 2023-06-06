@@ -9,25 +9,30 @@ function Form(props) {
 
   const recipeMethod = useRef();
 
-  let Key = useRef();
+  let Key = useRef(0);
 
   const [NewRecipe, UpdateNewRecipe] = useState({});
 
   function RecipeName(e) {
     recipeName.current = e.target.value;
   }
+
   function RecipeIng(e) {
     ingredients.current = e.target.value;
   }
+
   function RecipeMethod(e) {
     recipeMethod.current = e.target.value;
   }
+  
   function clickHandler(e) {
     e.preventDefault();
+   Key.current++;
+    //console.log("key" + typeof(Key.current));
     UpdateNewRecipe( "Key: "+ Key.current + " ID: "+ recipeName.current + " RecipeName: "+ recipeName.current+ " Ingredients: "+ ingredients.current + " Method: "+ recipeMethod.current);
-    Key++;
-    props.addrecipe(NewRecipe.target);
-    console.log(NewRecipe);
+    
+    props.addrecipe(NewRecipe);
+    console.log("New Recipe "+NewRecipe);
   }
 
  
