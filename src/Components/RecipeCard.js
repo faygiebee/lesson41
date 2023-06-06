@@ -1,19 +1,21 @@
-import'./RecipeCard.css';
-import Card from './Card';
+import "./RecipeCard.css";
+import Card from "./Card.js";
 
+function RecipeCard(props) {
+  const Arr = props.recipes;
+  console.log("props.recipes" + Arr);
 
-function RecipeCard(props){
+  return (
+    <>
+      <div id="recipe-list">
+        {Arr.map(function (recipe) {
+          console.log("recipeCard " + recipe);
+          <Card recipeToPrint={recipe}> </Card>;
+        })}
+      </div>
 
-    
-
-    return (
-        <>
-        <div id="recipe-list"> 
-        
-        </div>
-
-		<div id="no-recipes">You have no recipes.</div>
-        </>
-    )
+      {Arr.length == 0 && <div id="no-recipes">You have no recipes.</div>}
+    </>
+  );
 }
 export default RecipeCard;
