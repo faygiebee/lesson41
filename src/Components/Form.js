@@ -1,7 +1,6 @@
 import "./Form.css";
 import { useState, useRef } from "react";
 
-
 function Form(props) {
   const recipeName = useRef();
 
@@ -24,22 +23,32 @@ function Form(props) {
   function RecipeMethod(e) {
     recipeMethod.current = e.target.value;
   }
-  
+
   function clickHandler(e) {
     e.preventDefault();
-   Key.current++;
+    Key.current++;
     //console.log("key" + typeof(Key.current));
-    UpdateNewRecipe( "Key: "+ Key.current + " ID: "+ recipeName.current + " RecipeName: "+ recipeName.current+ " Ingredients: "+ ingredients.current + " Method: "+ recipeMethod.current);
+    UpdateNewRecipe(
+      "Key: " +
+        Key.current +
+        " ID: " +
+        recipeName.current +
+        " RecipeName: " +
+        recipeName.current +
+        " Ingredients: " +
+        ingredients.current +
+        " Method: " +
+        recipeMethod.current
+    );
     
-    props.addrecipe(NewRecipe);
-    console.log("New Recipe "+NewRecipe);
+   props.addrecipe(NewRecipe);
+    console.log("NewRecipe" + NewRecipe);
   }
 
- 
   return (
     <div class="left-column">
       <h3>Add Recipe</h3>
-      <form >
+      <form>
         <label htmlFor="recipe-name">Name:</label>
         <input
           onChange={RecipeName}

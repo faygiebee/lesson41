@@ -12,10 +12,9 @@ function SearchBar(props){
         <div class="right-column">
 	    	<div id="search-section">
           <h3>Recipes List</h3>
-          <label for="search-box">Search:</label>
+          <label forHtml="search-box">Search:</label>
           <input onChange={ChangeHandler}type="text" id="search-box"/>
           
-        <RecipeCard></RecipeCard>
         </div>
         
       </div>
